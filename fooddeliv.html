@@ -3,7 +3,6 @@
 
 <head>
     <title>Food Delivery App</title>
-    <script src="schro.js"></script>
 </head>
 <style>
     /*top div containing name and the signup button*/
@@ -33,9 +32,16 @@
         border: none;
         border-radius: 4px;
     }
+
+	
+    /*setting the div element as invisible*/
+    
+    .popup {
+        display: none;
+    }
     /*signup form that appears when signup button is clicked*/
     
-    .signup {
+    .signupform {
         background-image: url("https://cdn.pixabay.com/photo/2019/07/09/07/01/background-4326353_1280.jpg");
         background-size: cover;
         background-position: center;
@@ -48,7 +54,7 @@
         border-radius: 1vw;
     }
     
-    .signup>label {
+    .signupform>label {
         display: inline-block;
         text-align: left;
         vertical-align: center;
@@ -58,7 +64,7 @@
         padding: 0.35vw;
     }
     
-    .signup>input {
+    .signupform>input {
         min-width: 50%;
         padding: 0.35vw 0.35vh;
         border: none;
@@ -72,7 +78,7 @@
         font-size: 1.5vw;
     }
     
-    .signup>button {
+    .signupbutton {
         min-width: 6vw;
         background-color: white;
         color: green;
@@ -80,66 +86,106 @@
         position: relative;
         top: 8vh;
         bottom: 0.5vh;
-        left: 9vw;
+        left: 5vw;
         right: 0;
-        margin: 1% 0% 3% 0%;
+        margin: 1% 0% 2% 3%;
         border: none;
         border-radius: 2vw;
         font-size: 1.5vw;
         text-align: center;
     }
     
-    .signup>input:hover {
+    .cancelbutton {
+        min-width: 6vw;
+        background-color: white;
+        color: red;
+        font-weight: 700;
+        position: relative;
+        top: 8vh;
+        bottom: 0.5vh;
+        left: 5vw;
+        right: 0;
+        margin: 1% 0% 2% 3%;
+        border: none;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    
+    .signupform>input:hover {
         background-color: #A9A9A9;
         color: #1a1a1d;
     }
     
-    .signup>button:hover {
+    .signupbutton:hover {
         background-color: green;
         color: white;
         text-decoration: underline;
     }
     
+    .cancelbutton:hover {
+        background-color: red;
+        color: white;
+        text-decoration: underline;
+    }
+    
+     ::placeholder {
+        color: gray;
+        opacity: 1;
+        font-size: 1.5vh;
+        text-align: center;
+    }
+    
     @media only screen and (max-width: 768px) {
-        .signup {
+        .signupform {
             min-width: 50vw;
             margin-top: 20vh;
             margin-left: 25vw;
-            min-height: 75vh;
+            min-height: 78vh;
         }
-        .signup>label {
+        .signupform>label {
             min-width: 30vw;
             font-size: 4.5vh;
         }
-        .signup>input {
+        .signupform>input {
             min-width: 47vw;
         }
-        .signup>button {
+        .signupform>button {
             min-width: 47vw;
             left: 1.5vw;
+            margin: 1% 0% 2% 0%;
         }
     }
 </style>
 
 <body>
     <div class="header">
-        <button type="submit">SIGN UP</button>
+        <button type="submit" onclick="openForm()">SIGN UP</button>
         <h1>SCHRO</h1>
     </div>
-    <div>
-        <form class="signup">
+    <div class="popup" id="myForm">
+        <form class="signupform">
             <label for="name">Name</label>
-            <input type="text" id="name" required><br>
+            <input type="text" id="name " required><br>
             <label for="email">Email:</label>
-            <input type="email" id="email" required><br>
+            <input type="email" id="email " required placeholder="eg.emailid@gmail.com"><br>
             <label for="password">Password:</label>
             <input type="password" id="password" required><br>
             <label for="mobile">Mobile number:</label>
-            <input type="tel" id="mobile" pattern="[0-9]{10}" required><br>
-            <button type="submit" id="signup">SIGNUP</button>
+            <input type="tel" id="mobile" pattern="[0-9]{10}" required placeholder="eg.9876543210"><br>
+            <button type="submit" id="signup" class="signupbutton">SIGNUP</button>
+            <button type="submit" id="cancel" onclick="closeForm()" class="cancelbutton">CANCEL</button>
         </form>
     </div>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
 
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
