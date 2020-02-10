@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Delivery App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+</head>
+<style>
+    /*top div containing name and the signup button*/
+    
+    .header {
+        background-color: #002006;
+        width: 100%;
+        position: absolute;
+        padding: 1px 1px;
+        top: 0;
+        left: 0;
+        color: white;
+    }
+    
+    .header>h1 {
+        margin: 1%;
+        color: lime;
+    }
+    
+    .header>button {
+        margin: 1.5% 1% 1.5% 0%;
+        float: right;
+        min-width: 5vw;
+        min-height: 3vh;
+        background-image:linear-gradient(to right, rgb(255, 255, 255), rgba(0,255,0,1));
+        color: #002006;
+        border: none;
+        border-radius: 4px;
+    }
+	
+    .middle{
+        display:table-cell;
+        width:100vw;
+        height:50vh;
+        background-image:url(foodbgnd.jpg);
+        background-size:cover;
+        background-repeat:no-repeat;
+    }
+
+    .header>button:hover {    
+        background-image:linear-gradient(to left, rgb(255, 255, 255), rgba(0,255,0,1));
+    }
+    /*setting the div element as invisible*/ 
+    
+    body{
+        background-image:linear-gradient(to right, rgb(255, 255, 255), rgba(0,255,0,0.5),rgb(255, 255, 255));
+    }
+
+    .popup {
+        display: none;
+        
+    }
+    /*signup form that appears when signup button is clicked*/
+    
+    .signupform {
+        background-image: url("formbgnd.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 15vh;
+        margin-left: 37.5vw;
+        opacity: 0.95;
+        width: 25vw;
+        /*height: 60vh;*/
+        border-radius: 1vw;
+        position:absolute;
+        box-shadow:10px 10px #002006;
+    }
+    
+    .signupform>label {
+        display: inline-block;
+        text-align: left;
+        vertical-align: center;
+        width: 60%;
+        font-size: 1.5vw;
+        color: hsl(0, 100%, 25%);
+        padding: 0.35vw;
+    }
+    
+    .signupform>input {
+        min-width: 50%;
+        padding: 0.35vw 0.35vh;
+        border: none;
+        border-radius: 1vw;
+        background-color: white;
+        color: black;
+        margin-top: 1vh;
+        margin-left: 1vw;
+        text-align: center;
+        vertical-align: center;
+        font-size: 1.5vw;
+    }
+    
+    .signupbutton {
+        min-width: 6vw;
+        background-color: white;
+        color: green;
+        font-weight: 700;
+        position: relative;
+        /*top: 8vh;
+        bottom: 0.5vh;*/
+        left: 5vw;
+        right: 0;
+        margin: 3% 1% 1% 2%;
+        border: none;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    
+    .cancelbutton {
+        min-width: 6vw;
+        background-color: white;
+        color: red;
+        font-weight: 700;
+        position: relative;
+       /* top: 8vh;
+        bottom: 0.5vh;*/
+        left: 5vw;
+        right: 0;
+        margin: 1% 2% 1% 1%;/*Top Right Bottom Left*/
+        border: none;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+        text-align: center;
+    }
+    
+    .signupform>input:hover {
+        background-color: #A9A9A9;
+        color: #1a1a1d;
+    }
+    
+    .signupbutton:hover {
+        background-color: green;
+        color: white;
+        text-decoration: underline;
+    }
+    
+    .cancelbutton:hover {
+        background-color: red;
+        color: white;
+        text-decoration: underline;
+    }
+    
+     /*::placeholder {
+        color: gray;
+        opacity: 1;
+        font-size: 2vh;
+        text-align: center;
+    }*/
+    
+    @media only screen and (max-width: 768px) {
+        .signupform {
+            min-width: 50vw;
+            margin-top: 20vh;
+            margin-left: 25vw;
+            min-height: 78vh;
+        }
+        .signupform>label {
+            min-width: 30vw;
+            font-size: 4.5vh;
+        }
+        .signupform>input {
+            min-width: 48vw;
+        }
+        .signupform>button {
+            min-width: 47vw;
+            left: 1.5vw;
+            margin: 1% 0% 2% 0%;
+        }
+    }
+</style>
+
+<body>
+    <div class="header">
+        <button type="submit" onclick="openForm()">SIGN UP</button>
+        <h1>SCHRO</h1>
+    </div>
+    <div class="middle">
+    </div>
+    <div class="middle">
+    </div>
+    <div class="middle">
+    </div>
+    <div class="popup" id="myForm">
+        <form class="signupform">
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name " required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email " required placeholder="eg.emailid@gmail.com"><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br>
+            <label for="confirmpassword">Confirm Password:</label>
+            <input type="password" id="confirmpassword" required><br>
+            <label for="mobile">Mobile number:</label>
+            <input type="tel" id="mobile" pattern="[0-9]{10}" required placeholder="eg.9876543210"><br>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required><br>
+            <button type="submit" id="signup" class="signupbutton">SIGNUP</button>
+            <button type="submit" id="cancel" onclick="closeForm()" class="cancelbutton">CANCEL</button>
+        </form>
+    </div>
+    <script>
+        /*Function used as default state or when cancel button of popup is clicked*/
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        /*Function used when Signup button of main page is clicked*/
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        /*Function used for checking if password and confrim password match*/
+        /*$(function(){
+            $("#signup").click(function(){ 
+                var password=$("#password").val();
+                var confirmpassword=$("#confirmpassword").val();
+                if(password != confirmpassword)
+                {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                return true;
+                });
+            });
+            */
+    </script>
+</body>
+
+</html>
