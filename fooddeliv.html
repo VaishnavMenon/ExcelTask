@@ -36,11 +36,24 @@
         border-radius: 4px;
     }
 	
+    .middle{
+        display:table-cell;
+        width:100vw;
+        height:50vh;
+        background-image:url(foodbgnd.jpg);
+        background-size:cover;
+        background-repeat:no-repeat;
+    }
+
     .header>button:hover {    
         background-image:linear-gradient(to left, rgb(255, 255, 255), rgba(0,255,0,1));
     }
     /*setting the div element as invisible*/ 
     
+    body{
+        background-image:linear-gradient(to right, rgb(255, 255, 255), rgba(0,255,0,0.5),rgb(255, 255, 255));
+    }
+
     .popup {
         display: none;
         
@@ -48,17 +61,18 @@
     /*signup form that appears when signup button is clicked*/
     
     .signupform {
-        background-image: url("https://cdn.pixabay.com/photo/2019/07/09/07/01/background-4326353_1280.jpg");
+        background-image: url("formbgnd.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         margin-top: 15vh;
         margin-left: 37.5vw;
-        opacity: 0.75;
+        opacity: 0.95;
         width: 25vw;
         /*height: 60vh;*/
         border-radius: 1vw;
         position:absolute;
+        box-shadow:10px 10px #002006;
     }
     
     .signupform>label {
@@ -170,9 +184,15 @@
         <button type="submit" onclick="openForm()">SIGN UP</button>
         <h1>SCHRO</h1>
     </div>
+    <div class="middle">
+    </div>
+    <div class="middle">
+    </div>
+    <div class="middle">
+    </div>
     <div class="popup" id="myForm">
         <form class="signupform">
-	    <br>
+            <br>
             <label for="name">Name:</label>
             <input type="text" id="name " required><br>
             <label for="email">Email:</label>
