@@ -30,13 +30,16 @@
         float: right;
         min-width: 5vw;
         min-height: 3vh;
-        background-color: lime;
+        background-image:linear-gradient(to right, rgb(255, 255, 255), rgba(0,255,0,1));
         color: #002006;
         border: none;
         border-radius: 4px;
     }
 	
-    /*setting the div element as invisible*/
+    .header>button:hover {    
+        background-image:linear-gradient(to left, rgb(255, 255, 255), rgba(0,255,0,1));
+    }
+    /*setting the div element as invisible*/ 
     
     .popup {
         display: none;
@@ -133,12 +136,12 @@
         text-decoration: underline;
     }
     
-     ::placeholder {
+     /*::placeholder {
         color: gray;
         opacity: 1;
         font-size: 2vh;
         text-align: center;
-    }
+    }*/
     
     @media only screen and (max-width: 768px) {
         .signupform {
