@@ -26,6 +26,5 @@
 /*Function to clear all inputs entered by user after signup and also when cancel is clicked*/    
     function clearinputs()
     {
-	alert('hello');
         document.getElementById("signupform").reset();
     }
