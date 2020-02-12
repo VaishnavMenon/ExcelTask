@@ -221,6 +221,7 @@
             min-width: 70vw;
             margin-top: 17vh;
             margin-left: 12vw;
+            padding: 4px;
         }
         .signupform>label {
             width: inherit;
@@ -229,7 +230,7 @@
         .signupform>input {
             width: inherit;
             font-size: 3.5vh;
-            margin:1% 0.5% 2% 4%; 
+            margin:1% 0.5% 2% 5%; 
         }
         .signupform>button {
             width: inherit;
@@ -276,9 +277,9 @@
         <h1>Your favourite dish is just a click away.</h1>
        <input type="search" class="searchbar" placeholder="Find food">
        <button type="submit" class="findfood">Search</button><br>
-       <img src="food1.jpg" alt="food img1">
-       <img src="food2.jpg" alt="food img2">
-       <img src="food3.jpg" alt="food img3">
+       <img src="food1.jpg" alt="foodimg1">
+       <img src="food2.jpg" alt="foodimg2">
+       <img src="food3.jpg" alt="foodimg3">
        <br><br>
     </div>
     <div class="footer" id="footer">
@@ -289,7 +290,7 @@
         <a href="url">Gallery</a>
     </div>
     <div class="popup" id="myForm">
-        <form class="signupform">
+        <form class="signupform" id="signupform" onsubmit="clearinputs()">
             <br>
             <label for="name">Name:</label>
             <input type="text" id="name " required><br>
@@ -298,13 +299,13 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
             <label for="confirmpassword">Confirm Password:</label>
-            <input type="password" id="confirmpassword" name="confirmpassword" required><br>
+            <input type="password" id="confirmpassword" name="confirmpassword" required onblur="passcheck()"><br>
             <label for="mobile">Mobile number:</label>
             <input type="tel" id="mobile" pattern="[0-9]{10}" required placeholder="eg.9876543210"><br>
             <label for="address">Address:</label>
             <input type="text" id="address" required><br>
-            <button type="submit" id="signup" class="signupbutton">SIGNUP</button>
-            <button type="submit" id="cancel" onclick="closeForm()" class="cancelbutton">CANCEL</button>
+            <button type="submit" id="signup" class="signupbutton" onclick="passcheck()">SIGNUP</button>
+            <button type="submit" id="cancel" class="cancelbutton" onclick="closeForm(); clearinputs();">CANCEL</button>
         </form>
     </div>
     <script>
@@ -320,6 +321,20 @@
             document.getElementById("middle").style.display = "block";
         }
 
+        function passcheck(){
+            var pass = document.getElementById("password").value;
+            var cpass = document.getElementById("confirmpassword").value;
+            if(pass!=cpass)
+            {
+                alert('Password and Confirm Password do not match');
+                document.getElementById("password").value='';
+                document.getElementById("confirmpassword").value='';
+            }
+        function clearinputs()
+        {
+            document.getElementById("signupform").reset();
+        }
+        }
         /*Function used for checking if password and confrim password match*/
         /*$(function(){
             $("#signup").click(function(){ 
