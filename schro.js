@@ -23,7 +23,7 @@
         }
 	}
 	    
-/*Function to clear all inputs entered by user after signup and also when cancel is clicked*/    
+/*Function to clear all inputs entered by user after signup button on form is clicked and also when cancel on form is clicked*/    
     function clearinputs()
     {
         document.getElementById("signupform").reset();
