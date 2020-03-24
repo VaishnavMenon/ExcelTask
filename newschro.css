@@ -41,6 +41,7 @@
     .header>button:hover {    
       /*  background-image:linear-gradient(to left, rgba(255,255,255), rgb(73, 190, 47));*/
       background-color:rgb(73, 190, 47);
+      text-decoration: underline;
     }
     
 /*this is the div element that appears in default state and disappears when signup on header is clicked*/ 
@@ -90,6 +91,29 @@
         width:33%;
         height:40vh;
     }
+
+    .tops{
+        font-size:inherit;
+        width:10vw;
+        min-height:10vw;
+        margin-left:12vw;
+        margin-top:15vh;
+        margin-bottom:12vh;
+        position: relative;
+        float:left;
+        text-align:center;
+        word-break: break-word;
+        background-image:linear-gradient(to top right,rgba(73, 190, 47,1),rgba(14, 63, 3,1));
+        border:none;
+        border-radius:1vw;
+        color:whitesmoke;
+    }    
+
+    .tops:hover{
+        background-image:linear-gradient(to top right,rgba(73, 190, 47,0.5),rgba(14, 63, 3,0.5));
+        text-decoration: underline;
+    }
+
 /**********************************************************************************************************************/
 * {box-sizing:border-box}
 
@@ -352,6 +376,15 @@
         }
 
         .footer>a{
-            margin-left:6vw;
+            margin-left:2vw;
         }
+
+        .tops{
+            width:40vw;
+            height:20vw;
+            margin-left:5vw;
+            margin-top:0.5vh;
+            margin-bottom:15vh; 
+        } 
     }	
+
