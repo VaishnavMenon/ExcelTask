@@ -8,7 +8,7 @@
 /*top div containing name and the signup button*/
     .header {
         /*background-color:rgba(46,17,20);*/
-       /* background-image:linear-gradient(to left,#EAC67A,#984B43);*/ /********TODAY******/
+       /* background-image:linear-gradient(to left,#EAC67A,#984B43);*/ 
         background-color:#181717;
         width: 100%;
         position: absolute;
